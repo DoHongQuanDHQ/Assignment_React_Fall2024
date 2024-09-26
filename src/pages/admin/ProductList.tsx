@@ -31,7 +31,8 @@ export default function ProductList() {
 
   return (
     <div className="container">
-      <h1>Product List</h1>
+      <h1>Admin</h1>
+      <button className="btn btn-primary">Thêm sản phẩm</button>
       <table className="table table-bordered ">
         <thead className="text-center">
           <tr>
@@ -52,7 +53,7 @@ export default function ProductList() {
                 <img src={product.image} style={{ width: 100, height: 100 }} />
               </td>
               <td>{product.description}</td>
-              <td>Price: {product.price} VND</td>
+              <td>{product.price} VND</td>
               <td>
                 <button
                   onClick={() => handleDeleteProduct(product.id)}

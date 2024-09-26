@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: rgb(231, 228, 229);
 }
 
 .container {
@@ -20,6 +20,66 @@ body {
   border-radius: 20px;
   /* Tạo khoảng cách trên trang */
 }
+
+/* Header */
+
+.navbar {
+  background-color: #e1ebe2;
+  /* Màu nền */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  /* Kích thước chữ cho logo */
+  font-weight: bold;
+  /* Đậm chữ */
+  color: #007bff;
+  /* Màu chữ cho logo */
+}
+
+.navbar-nav .nav-link {
+  color: #343a40;
+  /* Màu chữ cho các liên kết */
+  font-weight: 500;
+  /* Đậm chữ */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0056b3;
+  /* Màu chữ khi hover */
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  color: #0056b3;
+  /* Màu chữ cho mục đang hoạt động */
+  font-weight: bold;
+  /* Đậm chữ cho mục đang hoạt động */
+}
+
+.navbar-toggler {
+  border: none;
+  /* Bỏ biên cho nút toggle */
+}
+
+.navbar-toggler-icon {
+  background-color: #007bff;
+  /* Màu nền cho icon toggle */
+}
+
+/* Cố định chiều cao cho navbar */
+.navbar {
+  min-height: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background-color: #f8f9fa;
+    /* Màu nền cho navbar khi mở trên mobile */
+  }
+}
+
+/* Kết thúc Header */
 
 .textchu {
   text-align: center;
@@ -58,7 +118,7 @@ body {
 .card-img-top {
   height: auto;
   /* Đặt chiều cao tự động */
-  max-height: 250px;
+  max-height: 300px;
   /* Thiết lập chiều cao tối đa */
   width: 100%;
   /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của card */
@@ -66,6 +126,12 @@ body {
   /* Cắt ảnh sao cho không bị biến dạng */
   border-radius: 5px;
   /* Góc bo tròn cho ảnh */
+  margin-bottom: 10px;
+  /* Màu văn bản cho ảnh */
+  display: block;
+  /* Hien thi ảnh */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .spinner-border {
@@ -78,13 +144,23 @@ body {
 .card-title {
   font-weight: bold;
   /* Làm đậm tiêu đề sản phẩm */
-  color: #333;
+  color: black;
   /* Màu tiêu đề */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
 }
 
 .card-text {
   color: #555;
   /* Màu văn bản mô tả */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
 }
 
 
@@ -142,6 +218,99 @@ body {
   margin-top: auto;
   /* Đẩy chúng xuống dưới cùng của thẻ sản phẩm */
 }
+
+/* chi tiet san pham */
+/* .card-img {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: #0000;
+  display: flex;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+} */
+.container3 {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* centers the container */
+  padding: 20px;
+  background-color: #f9f9f9;
+  /* light background */
+  border-radius: 10px;
+  /* rounded corners */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.row1 {
+  display: flex;
+  /* use flexbox for layout */
+  align-items: center;
+  /* vertically center items */
+  gap: 20px;
+  /* space between columns */
+}
+
+.col-3 {
+  flex-basis: 25%;
+  /* width for the image column */
+}
+
+.col-5 {
+  flex-basis: 70%;
+  /* width for the text column */
+}
+
+.card-img {
+  width: 100%;
+  /* make the image responsive */
+  border-radius: 10px;
+  /* rounded corners for the image */
+  object-fit: cover;
+  /* ensure the image covers its area */
+}
+
+.card-titl {
+  font-size: 1.5rem;
+  /* larger font for the title */
+  font-weight: bold;
+  color: #333;
+  /* darker shade for contrast */
+}
+
+.card-tet {
+  font-size: 1rem;
+  /* regular font size for description */
+  color: #555;
+  /* softer color for description */
+  margin-top: 10px;
+  /* spacing above description */
+}
+
+.card-tex {
+  font-size: 1.2rem;
+  /* larger font for price */
+  color: green;
+  /* green color for price */
+  margin-top: 10px;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .row1 {
+    flex-direction: column;
+    /* stack vertically on smaller screens */
+  }
+
+  .col-3,
+  .col-5 {
+    flex-basis: 100%;
+    /* full width on mobile */
+  }
+}
+
+
+/* ket thuc chi tiet san pham */
 
 /* Css AuthForm */
 @media (max-width: 576px) {

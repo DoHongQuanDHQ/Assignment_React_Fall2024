@@ -17,19 +17,19 @@ export default function ProductDetail() {
   }, [id]);
 
   return (
-    <div className="container">
+    <div className="container3">
       <h2 className="text-center my-4" style={{ color: "red" }}>
-        Product Detail
+        Chi tiết sản phẩm
       </h2>
       {product && ( // @if
-        <div className="row">
-          <div className="col">
-            <img src={product.image} className="card-img-top" alt="" />
+        <div className="row1 mb-5">
+          <div className="col-3">
+            <img src={product.image} className="card-img" alt="" />
           </div>
-          <div className="col">
-            <h5 className="card-title">{product.title}</h5>
-            <p className="card-text">{product.description}</p>
-            <p className="card-text">Price: {product.price} VND</p>
+          <div className="col-5">
+            <h5 className="card-titl">{product.title}</h5>
+            <p className="card-tet">{product.description}</p>
+            <p className="card-tex">Price: {product.price} VND</p>
           </div>
         </div>
       )}

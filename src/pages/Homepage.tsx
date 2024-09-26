@@ -7,12 +7,6 @@ import { Product } from "../types/Product";
 export default function Homepage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const truncateDescription = (description, length) => {
-    if (description.length > length) {
-      return description.substring(0, length) + "..."; // Cắt ngắn và thêm '...'
-    }
-    return description; // Trả về mô tả nguyên vẹn
-  };
 
   useEffect(() => {
     getAllProduct()
@@ -34,34 +28,34 @@ export default function Homepage() {
           </div>
         </div>
       )}
-      <div className="row">
+      <div className="row mt-3 row-cols-1 row-cols-md-3 g-4">
         {products.map((product, index) => (
-          <div key={index} className="col mt-2 ">
+          <div key={index} className="col mb-5">
             <div className="card h-100" style={{ width: "18rem" }}>
-              <img
-                src={product.image}
-                className="card-img-top"
-                alt="..."
-                // style={{
-                //   position: "absolute",
-                //   top: "50%",
-                //   left: "50%",
-                //   width: "auto",
-                //   height: "100%",
-                //   transform: "translate(-50%, -50%)",
-                //   objectFit: "cover",
-                // }}
-              />
               <div className="card-body">
-                <h5 className="card-title">{product.title}</h5>
-                <p className="card-text">
-                  {truncateDescription(product.description, 100)}{" "}
-                  {/* Gọi hàm để rút ngắn mô tả */}
-                </p>
-                <p className="card-text" style={{ color: "red" }}>
-                  Price: {product.price}
-                  <span>VND</span>
-                </p>
+                <img src={product.image} className="card-img-top" alt="..." />
+                <div className="card-title">
+                  <h3>{product.title}</h3>
+                </div>
+                <div className="card-text">
+                  <p
+                    style={{
+                      color: "red",
+                      fontWeight: "bold",
+                      fontSize: 15,
+                      marginTop: 10,
+                      marginBottom: 10,
+                      marginLeft: 120,
+                    }}
+                  >
+                    <span style={{ color: "black" }}>Price: </span>
+                    <b>{product.price}</b>
+                    <span style={{ color: "black" }}>VND</span>
+                  </p>
+                </div>
+                <div className="card-text">
+                  <p>{product.description}</p>
+                </div>
                 <div className="mt-auto d-flex justify-content-between">
                   <Link
                     to={`/product/${product.id}`}
