@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Product } from "../../types/Product";
+import { Product } from "../types/Product";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { deleteProduct, getAllProduct } from "../../services/product";
+import { deleteProduct, getAllProduct } from "../services/product";
 
 export default function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -32,7 +32,9 @@ export default function ProductList() {
   return (
     <div className="container">
       <h1>Admin</h1>
-      <button className="btn btn-primary">Thêm sản phẩm</button>
+      <Link to={"/admin/product/add"}>
+        <button className="btn btn-primary">Thêm sản phẩm</button>
+      </Link>
       <table className="table table-bordered ">
         <thead className="text-center">
           <tr>
@@ -46,7 +48,7 @@ export default function ProductList() {
         </thead>
         <tbody>
           {products.map((product) => (
-            <tr>
+            <tr key={product.id}>
               <td>{product.id}</td>
               <td>{product.title}</td>
               <td>
@@ -62,7 +64,7 @@ export default function ProductList() {
                   Delete
                 </button>
                 <Link
-                  to={`/admin/product/${product.id}`}
+                  to={`/admin/product/edit/${product.id}`}
                   className="btn btn-success"
                 >
                   Edit

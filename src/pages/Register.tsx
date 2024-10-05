@@ -1,8 +1,8 @@
 import { SubmitHandler } from "react-hook-form";
-import { registerUser, User } from "../services/auth";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthForm } from "../components/AuthForm";
+import { registerUser, User } from "../services/auth";
 
 export default function Register() {
   const nav = useNavigate();

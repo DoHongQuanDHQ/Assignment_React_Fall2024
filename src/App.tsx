@@ -8,14 +8,20 @@ import ClientAntdLayout from "./layouts/ClientAntdLayout";
 import { Toaster } from "react-hot-toast";
 import ProductDetail from "./pages/ProductDetail";
 import AdminLayout from "./layouts/AdminLayout";
-import ProductList from "./pages/admin/ProductList";
+import ProductList from "./admin/ProductList";
+import ProductAdd from "./admin/ProductAdd";
+import ProductEdit from "./admin/ProductEdit";
 
 function App() {
   const routeConfig = [
     {
       path: "admin",
       element: <AdminLayout />,
-      children: [{ path: "product/list", element: <ProductList /> }],
+      children: [
+        { path: "product/list", element: <ProductList /> },
+        { path: "product/add", element: <ProductAdd /> },
+        { path: "product/edit/:id", element: <ProductEdit /> },
+      ],
     },
     {
       path: "",
@@ -26,14 +32,14 @@ function App() {
         { path: "/product/:id", element: <ProductDetail /> },
       ],
     },
-    {
-      path: "antd",
-      element: <ClientAntdLayout />,
-      children: [
-        { path: "", element: <Homepage /> },
-        { path: "about", element: <About /> },
-      ],
-    },
+    // {
+    //   path: "antd",
+    //   element: <ClientAntdLayout />,
+    //   children: [
+    //     { path: "", element: <Homepage /> },
+    //     { path: "about", element: <About /> },
+    //   ],
+    // },
     { path: "/login", element: <Login /> },
     { path: "/register", element: <Register /> },
   ];

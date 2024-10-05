@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { User } from "../services/auth";
+import { User } from "../types/auth";
 
 type AuthForm = {
   isRegister?: boolean;

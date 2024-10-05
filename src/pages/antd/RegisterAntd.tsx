@@ -1,5 +1,5 @@
 import { Button, Form, FormProps, Input } from "antd";
-import { registerUser, User } from "../../services/auth";
+import { registerUser, User } from "../../types/auth";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 

@@ -1,8 +1,8 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { loginUser, User } from "../services/auth";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { AuthForm } from "../components/AuthForm";
+import { loginUser, User } from "../services/auth";
 
 export default function Login() {
   const {
@@ -28,7 +28,7 @@ export default function Login() {
   return (
     <div className="container">
       <h2>Login</h2>
-      <AuthForm onSubmit={handleLogin} isLogin/>
+      <AuthForm onSubmit={handleLogin} isLogin />
     </div>
   );
 }
